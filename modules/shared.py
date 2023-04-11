@@ -427,9 +427,6 @@ options_templates.update(options_section((None, "Hidden options"), {
 =======
     "disabled_extensions": OptionInfo([], "Disable these extensions"),
     "disable_all_extensions": OptionInfo(False, "Disable all extensions (preserves the list of disabled extensions)"),
-<<<<<<< HEAD
->>>>>>> parent of fc8e1008 (Make disable configurable between builtin/extra extensions)
-=======
 >>>>>>> parent of fc8e1008 (Make disable configurable between builtin/extra extensions)
     "sd_checkpoint_hash": OptionInfo("", "SHA256 hash of the current checkpoint"),
 }))
