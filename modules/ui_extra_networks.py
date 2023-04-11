@@ -2,10 +2,8 @@ import glob
 import os.path
 import urllib.parse
 from pathlib import Path
-from PIL import PngImagePlugin
 
 from modules import shared
-from modules.images import read_info_from_image
 import gradio as gr
 import json
 import html
@@ -254,10 +252,10 @@ def create_ui(container, button, tabname):
 
     def toggle_visibility(is_visible):
         is_visible = not is_visible
-        return is_visible, gr.update(visible=is_visible), gr.update(variant=("secondary-down" if is_visible else "secondary"))
+        return is_visible, gr.update(visible=is_visible)
 
     state_visible = gr.State(value=False)
-    button.click(fn=toggle_visibility, inputs=[state_visible], outputs=[state_visible, container, button])
+    button.click(fn=toggle_visibility, inputs=[state_visible], outputs=[state_visible, container])
 
     def refresh():
         res = []
@@ -292,7 +290,6 @@ def setup_ui(ui, gallery):
 
         img_info = images[index if index >= 0 else 0]
         image = image_from_url_text(img_info)
-        geninfo, items = read_info_from_image(image)
 
         is_allowed = False
         for extra_page in ui.stored_extra_pages:
@@ -302,12 +299,7 @@ def setup_ui(ui, gallery):
 
         assert is_allowed, f'writing to {filename} is not allowed'
 
-        if geninfo:
-            pnginfo_data = PngImagePlugin.PngInfo()
-            pnginfo_data.add_text('parameters', geninfo)
-            image.save(filename, pnginfo=pnginfo_data)
-        else:
-            image.save(filename)
+        image.save(filename)
 
         return [page.create_html(ui.tabname) for page in ui.stored_extra_pages]
 
