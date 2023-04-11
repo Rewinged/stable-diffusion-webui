@@ -423,6 +423,7 @@ options_templates.update(options_section(('postprocessing', "Postprocessing"), {
 
 options_templates.update(options_section((None, "Hidden options"), {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "disabled_extensions": OptionInfo([], "Disable those extensions"),
 =======
     "disabled_extensions": OptionInfo([], "Disable these extensions"),
@@ -434,6 +435,9 @@ options_templates.update(options_section((None, "Hidden options"), {
 >>>>>>> parent of fc8e1008 (Make disable configurable between builtin/extra extensions)
 =======
 >>>>>>> parent of fc8e1008 (Make disable configurable between builtin/extra extensions)
+=======
+    "disabled_extensions": OptionInfo([], "Disable those extensions"),
+>>>>>>> parent of 2a4d3d21 (Add temporary "disable all extensions" option for debugging use)
     "sd_checkpoint_hash": OptionInfo("", "SHA256 hash of the current checkpoint"),
 }))
 

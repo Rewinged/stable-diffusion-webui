@@ -91,6 +91,7 @@ def list_extensions():
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> parent of fc8e1008 (Make disable configurable between builtin/extra extensions)
@@ -101,6 +102,8 @@ def list_extensions():
         return
 
 >>>>>>> parent of fc8e1008 (Make disable configurable between builtin/extra extensions)
+=======
+>>>>>>> parent of 2a4d3d21 (Add temporary "disable all extensions" option for debugging use)
     extension_paths = []
     for dirname in [paths.extensions_dir, paths.extensions_builtin_dir]:
         if not os.path.isdir(dirname):
