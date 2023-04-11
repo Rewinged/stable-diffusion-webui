@@ -15,12 +15,7 @@ if not os.path.exists(extensions_dir):
 
 
 def active():
-    if shared.opts.disable_all_extensions == "all":
-        return []
-    elif shared.opts.disable_all_extensions == "extra":
-        return [x for x in extensions if x.enabled and x.is_builtin]
-    else:
-        return [x for x in extensions if x.enabled]
+    return [x for x in extensions if x.enabled]
 
 
 class Extension:
@@ -102,11 +97,6 @@ def list_extensions():
     if not os.path.isdir(extensions_dir):
         return
 
-    if shared.opts.disable_all_extensions == "all":
-        print("*** \"Disable all extensions\" option was set, will not load any extensions ***")
-    elif shared.opts.disable_all_extensions == "extra":
-        print("*** \"Disable all extensions\" option was set, will only load built-in extensions ***")
-
     extension_paths = []
     for dirname in [extensions_dir, extensions_builtin_dir]:
         if not os.path.isdir(dirname):
@@ -122,3 +112,4 @@ def list_extensions():
     for dirname, path, is_builtin in extension_paths:
         extension = Extension(name=dirname, path=path, enabled=dirname not in shared.opts.disabled_extensions, is_builtin=is_builtin)
         extensions.append(extension)
+
