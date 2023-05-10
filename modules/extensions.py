@@ -88,6 +88,13 @@ def list_extensions():
     if not os.path.isdir(paths.extensions_dir):
         return
 
+<<<<<<< HEAD
+=======
+    if shared.opts.disable_all_extensions:
+        print("*** \"Disable all extensions\" option was set, will not load any extensions ***")
+        return
+
+>>>>>>> parent of fc8e1008 (Make disable configurable between builtin/extra extensions)
     extension_paths = []
     for dirname in [paths.extensions_dir, paths.extensions_builtin_dir]:
         if not os.path.isdir(dirname):
