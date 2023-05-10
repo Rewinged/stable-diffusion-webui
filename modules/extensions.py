@@ -90,10 +90,7 @@ def list_extensions():
 
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
-=======
->>>>>>> parent of fc8e1008 (Make disable configurable between builtin/extra extensions)
 =======
 >>>>>>> parent of fc8e1008 (Make disable configurable between builtin/extra extensions)
     if shared.opts.disable_all_extensions:
