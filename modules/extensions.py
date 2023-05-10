@@ -89,10 +89,7 @@ def list_extensions():
         return
 
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
-=======
->>>>>>> parent of fc8e1008 (Make disable configurable between builtin/extra extensions)
     if shared.opts.disable_all_extensions:
         print("*** \"Disable all extensions\" option was set, will not load any extensions ***")
         return
